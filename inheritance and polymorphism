@@ -1,0 +1,72 @@
+//============================================================================
+// Name        : polymorphism.cpp
+// Author      : Sanket_Benade
+// Version     :
+// Copyright   : Caution !!!!
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include<string.h>
+using namespace std;
+
+//#define height h;
+//#define width w;
+//Base Class
+class Shape{
+public:
+	int height;
+	int width;
+
+	//*******A class can have no constructor************//
+
+	//base function :
+	void area(){
+		cout<<"this is area of shape which is a base class/parent class"<<endl;
+	}
+};
+
+
+//Derived Class 1
+class Rectangle: public Shape{
+public:
+
+	//Constructor
+	Rectangle(int w,int h){
+width=w;
+height=h;
+	}
+
+	//Function Overriding
+	void area(){
+		cout<<"Area of rectangle:"<<height*width<<endl;
+	}
+};
+
+
+//Derives Class 2
+class Triangle: public Shape{
+public:
+
+//	Constructor
+	Triangle(int w, int h){
+		width=w;
+		height=h;
+	}
+
+	//Function Overriding
+	void area(){
+		cout<<"Area of trianle is :"<<0.5*height*width;
+	}
+};
+int main() {
+int height;
+int width;
+	cout<<"enter height and width"<<endl;
+cin>>height>>width;
+Rectangle rectangle(height,width);
+rectangle.area();
+Triangle triangle(height,width);
+triangle.area();
+	return 0;
+}
